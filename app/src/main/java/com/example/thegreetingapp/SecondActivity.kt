@@ -12,10 +12,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SecondActivity : AppCompatActivity() {
-    lateinit var nameReceiver: TextView
-    lateinit var languageReceiver: TextView
-    lateinit var imgReceiver: ImageView
-    lateinit var moveToGoogle: Button
+    private lateinit var nameReceiver: TextView
+    private lateinit var languageReceiver: TextView
+    private lateinit var imgReceiver: ImageView
+    private lateinit var moveToGoogle: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
