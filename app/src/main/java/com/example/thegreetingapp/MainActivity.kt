@@ -1,5 +1,6 @@
 package com.example.thegreetingapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() {
                 "kotlin" -> imgLanguage.setImageResource(R.drawable.kotln)
                 else -> imgLanguage.setImageResource(R.drawable.ic_launcher_foreground)
             }
+        }
+
+        moveToSecondActivity.setOnClickListener {
+            val explicitIntent = Intent(this, SecondActivity::class.java)
+            startActivity(explicitIntent)
         }
     }
 }
