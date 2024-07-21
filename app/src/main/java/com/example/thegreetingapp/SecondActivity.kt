@@ -1,5 +1,7 @@
 package com.example.thegreetingapp
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -33,5 +35,10 @@ class SecondActivity : AppCompatActivity() {
         nameReceiver.text = intent.getStringExtra("name")
         languageReceiver.text = intent.getStringExtra("language")
         imgReceiver.setImageResource(intent.getIntExtra("img", 0))
+
+        moveToGoogle.setOnClickListener {
+            val implicitIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+            startActivity(implicitIntent)
+        }
     }
 }
