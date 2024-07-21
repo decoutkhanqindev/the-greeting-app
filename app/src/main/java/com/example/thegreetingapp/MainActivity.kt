@@ -37,18 +37,20 @@ class MainActivity : AppCompatActivity() {
         btn.setOnClickListener {
             Toast.makeText(this, "Hello ${inputName.text}", Toast.LENGTH_LONG).show()
 
-            when (inputLanguage.text.toString().lowercase()) {
-                "java" -> imgLanguage.setImageResource(R.drawable.java)
-                "kotlin" -> imgLanguage.setImageResource(R.drawable.kotln)
-                else -> imgLanguage.setImageResource(R.drawable.ic_launcher_foreground)
+            var imgResourceId = when (inputLanguage.text.toString().lowercase()) {
+                "java" -> R.drawable.java
+                "kotlin" -> R.drawable.kotln
+                else -> R.drawable.ic_launcher_foreground
             }
+            imgLanguage.setImageResource(imgResourceId)
+            imgLanguage.setTag(imgResourceId)
         }
 
         moveToSecondActivity.setOnClickListener {
             val explicitIntent = Intent(this, SecondActivity::class.java)
-            explicitIntent.putExtra("name", inputName.toString())
-            explicitIntent.putExtra("language", inputLanguage.toString())
-            explicitIntent.putExtra("img", imgLanguage.id)
+            explicitIntent.putExtra("name", inputName.text.toString())
+            explicitIntent.putExtra("language", inputLanguage.text.toString())
+            explicitIntent.putExtra("img", imgLanguage.tag as? Int)
             startActivity(explicitIntent)
         }
     }
