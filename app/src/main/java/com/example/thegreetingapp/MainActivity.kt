@@ -46,6 +46,9 @@ class MainActivity : AppCompatActivity() {
 
         moveToSecondActivity.setOnClickListener {
             val explicitIntent = Intent(this, SecondActivity::class.java)
+            explicitIntent.putExtra("name", inputName.toString())
+            explicitIntent.putExtra("language", inputLanguage.toString())
+            explicitIntent.putExtra("img", imgLanguage.toString())
             startActivity(explicitIntent)
         }
     }
