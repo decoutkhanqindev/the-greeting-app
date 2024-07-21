@@ -29,5 +29,9 @@ class SecondActivity : AppCompatActivity() {
         languageReceiver = findViewById(R.id.languageReceiver)
         imgReceiver = findViewById(R.id.imgReceiver)
         moveToGoogle = findViewById(R.id.moveToGoogle)
+
+        nameReceiver.text = intent.getStringExtra("name")
+        languageReceiver.text = intent.getStringExtra("language")
+        imgReceiver.setImageResource(intent.getIntExtra("img", 0))
     }
 }
