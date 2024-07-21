@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var inputLanguage: EditText
     private lateinit var btn: Button
     private lateinit var imgLanguage: ImageView
+    private lateinit var moveToSecondActivity: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         inputLanguage = findViewById(R.id.inputLanguage)
         btn = findViewById(R.id.btn)
         imgLanguage = findViewById(R.id.languageImg)
+        moveToSecondActivity = findViewById(R.id.moveToSecondActivity)
 
         btn.setOnClickListener {
             Toast.makeText(this, "Hello ${inputName.text}", Toast.LENGTH_LONG).show()
