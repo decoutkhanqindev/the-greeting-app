@@ -32,12 +32,12 @@ class MainActivity : AppCompatActivity() {
         imgLanguage = findViewById(R.id.languageImg)
 
         btn.setOnClickListener {
-            Toast.makeText(this, "Hello ${inputName.text}", Toast.LENGTH_LONG ).show()
+            Toast.makeText(this, "Hello ${inputName.text}", Toast.LENGTH_LONG).show()
 
-            if (inputLanguage.text.toString().lowercase() == "java") {
-                imgLanguage.setImageResource(R.drawable.java)
-            } else {
-                imgLanguage.setImageResource(R.drawable.kotln)
+            when (inputLanguage.text.toString().lowercase()) {
+                "java" -> imgLanguage.setImageResource(R.drawable.java)
+                "kotlin" -> imgLanguage.setImageResource(R.drawable.kotln)
+                else -> imgLanguage.setImageResource(R.drawable.ic_launcher_foreground)
             }
         }
     }
